@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Laporan - Lost and Found FMIPA UNM</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                Lost and Found FMIPA UNM
+            </a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="daftar.html">Daftar Laporan</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- FORM LAPORAN -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <strong>Form Laporan Barang Hilang dan Temuan</strong>
+                    </h3>
+                </div>
+
+                <div class="panel-body">
+
+                    <p>
+                        Silakan isi formulir berikut dengan informasi
+                        barang yang hilang atau ditemukan di lingkungan
+                        FMIPA Universitas Negeri Makassar.
+                    </p>
+
+                    <hr>
+
+                    <form id="formLaporan"
+                          action="api/simpan.php"
+                          method="POST"
+                          enctype="multipart/form-data">
+
+                        <!-- JENIS LAPORAN -->
+                        <div class="form-group">
+                            <label for="jenis">
+                                Jenis Laporan
+                            </label>
+
+                            <select class="form-control"
+                                    id="jenis"
+                                    name="jenis"
+                                    required>
+
+                                <option value="">
+                                    Pilih jenis laporan
+                                </option>
+
+                                <option value="hilang">
+                                    Barang Hilang
+                                </option>
+
+                                <option value="temuan">
+                                    Barang Temuan
+                                </option>
+
+                            </select>
+                        </div>
+
+
+                        <!-- NAMA PELAPOR -->
+                        <div class="form-group">
+                            <label for="nama_pelapor">
+                                Nama Pelapor
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="nama_pelapor"
+                                   name="nama_pelapor"
+                                   placeholder="Masukkan nama lengkap"
+                                   maxlength="100"
+                                   required>
+                        </div>
+
+
+                        <!-- NAMA BARANG -->
+                        <div class="form-group">
+                            <label for="nama_barang">
+                                Nama Barang
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="nama_barang"
+                                   name="nama_barang"
+                                   placeholder="Contoh: Dompet, HP, Kunci"
+                                   maxlength="150"
+                                   required>
+                        </div>
+
+
+                        <!-- CIRI BARANG -->
+                        <div class="form-group">
+                            <label for="ciri_barang">
+                                Ciri-ciri Barang
+                            </label>
+
+                            <textarea class="form-control"
+                                      id="ciri_barang"
+                                      name="ciri_barang"
+                                      rows="4"
+                                      placeholder="Jelaskan warna, merek, bentuk, atau ciri khusus barang"
+                                      required></textarea>
+                        </div>
+
+
+                        <!-- GEDUNG -->
+                        <div class="form-group">
+                            <label for="gedung">
+                                Gedung Tempat Barang Hilang atau Ditemukan
+                            </label>
+
+                            <select class="form-control"
+                                    id="gedung"
+                                    name="kode_gedung"
+                                    required>
+
+                                <option value="">
+                                    Memuat daftar gedung...
+                                </option>
+
+                            </select>
+
+                            <p class="help-block">
+                                Pilih gedung tempat barang hilang
+                                atau ditemukan.
+                            </p>
+                        </div>
+
+
+                        <!-- LOKASI -->
+                        <div class="form-group">
+                            <label for="lokasi">
+                                Lokasi Lebih Detail
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="lokasi"
+                                   name="lokasi"
+                                   placeholder="Contoh: Lantai 2, depan ruang kelas"
+                                   maxlength="150"
+                                   required>
+                        </div>
+
+
+                        <!-- TANGGAL -->
+                        <div class="form-group">
+                            <label for="tanggal">
+                                Tanggal Kehilangan atau Penemuan
+                            </label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   id="tanggal"
+                                   name="tanggal"
+                                   required>
+                        </div>
+
+
+                        <!-- KONTAK -->
+                        <div class="form-group">
+                            <label for="kontak">
+                                Kontak yang Bisa Dihubungi
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="kontak"
+                                   name="kontak"
+                                   placeholder="Masukkan nomor WhatsApp atau kontak aktif"
+                                   maxlength="50"
+                                   required>
+                        </div>
+
+
+                        <!-- FOTO -->
+                        <div class="form-group">
+                            <label for="foto">
+                                Foto Barang (Opsional)
+                            </label>
+
+                            <input type="file"
+                                   class="form-control"
+                                   id="foto"
+                                   name="foto"
+                                   accept=".jpg,.jpeg,.png,.webp">
+
+                            <p class="help-block">
+                                Format foto JPG, JPEG, PNG, atau WEBP.
+                                Ukuran maksimal 2 MB.
+                            </p>
+                        </div>
+
+
+                        <hr>
+
+
+                        <!-- INFORMASI PENITIPAN -->
+                        <div class="well">
+
+                            <h4>
+                                <strong>Informasi Tempat Penitipan Barang</strong>
+                            </h4>
+
+                            <p>
+                                Barang temuan dapat dititipkan di
+                                <strong>Menara FMIPA</strong>, tepatnya
+                                di tempat penitipan barang dekat
+                                mesin minuman.
+                            </p>
+
+                            <h5><strong>Ketentuan Penyimpanan:</strong></h5>
+
+                            <ul>
+                                <li>
+                                    Barang makanan: maksimal 1 hari.
+                                </li>
+
+                                <li>
+                                    Barang nonmakanan: maksimal 30 hari.
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+                        <!-- TOMBOL -->
+                        <div class="form-group">
+
+                            <button type="submit"
+                                    class="btn btn-primary">
+                                Kirim Laporan
+                            </button>
+
+                            <a href="index.html"
+                               class="btn btn-default">
+                                Kembali
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer class="text-center" style="padding:20px;">
+    <p>
+        &copy; 2026 Lost and Found FMIPA Universitas Negeri Makassar
+    </p>
+</footer>
+
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>

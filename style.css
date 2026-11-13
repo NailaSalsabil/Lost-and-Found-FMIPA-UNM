@@ -1,0 +1,164 @@
+/* PENGATURAN DASAR WEBSITE */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+    background-color: #ffffff;
+}
+
+
+/* BAGIAN BERANDA */
+
+.hero {
+    padding: 50px 15px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    color: #174a78;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+
+/* FOTO GEDUNG: MENAMPILKAN FOTO SECARA UTUH */
+
+.foto-gedung {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+
+/* BAGIAN LAYANAN */
+
+.layanan {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.layanan h2 {
+    color: #174a78;
+    margin-bottom: 25px;
+}
+
+
+/* HALAMAN FORM DAN DAFTAR */
+
+.halaman {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    min-height: 400px;
+}
+
+h2 {
+    color: #174a78;
+    margin-bottom: 25px;
+}
+
+
+/* FORMULIR */
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* PANEL INFORMASI */
+
+.panel {
+    margin-top: 20px;
+}
+
+.informasi-penitipan {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.informasi-penitipan p {
+    line-height: 1.8;
+}
+
+
+/* TABEL */
+
+.table {
+    background-color: #ffffff;
+    margin-top: 15px;
+}
+
+
+/* FOTO DETAIL BARANG */
+
+.foto-detail {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #174a78;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+/* TAMPILAN HP */
+
+@media screen and (max-width: 768px) {
+
+    .hero {
+        padding: 25px 15px;
+    }
+
+    .foto-gedung {
+        margin-top: 25px;
+    }
+
+    .halaman {
+        padding: 20px 15px;
+    }
+
+    .navbar-nav {
+        float: none !important;
+    }
+
+}
